@@ -1,6 +1,7 @@
 {
     "scripts": {
-        "start": "babel-node --presets env start.js"
+        "start": "babel-node --presets env start.js",
+		"cpt": "babel-node --presets env cmpy.js"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.14.2",
