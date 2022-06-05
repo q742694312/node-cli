@@ -5,10 +5,10 @@ import * as fs from 'fs'
 import * as path from 'path'
 //sheetjs.com/
 
-var sheets = xlsx.parse('./xlsx/20220304.xlsx');
+var sheets = xlsx.parse('./xlsx/0502.xls');
 
-var x_index=3
-var y_index=4
+var x_index=1
+var y_index=2
 // let sheets = xlsx.parse(path.join(__dirname, 'browser.xlsx'))
 // const workSheetsFromBuffer = xlsx.parse(fs.readFileSync(`${__dirname}/南大宝山树木数据.xlsx`));
 
@@ -21,9 +21,10 @@ for (var i in excelObj) {
 	if(i>0){
 		let wgs84_X=line[x_index]
 		let wgs84_Y=line[y_index]
-		// let {X,Y}=ShanghaiToWgs84([wgs84_Y,wgs84_X])
-	
-		let {X,Y}=WGS84_bd(wgs84_X,wgs84_Y)
+		let {X,Y}=ShanghaiToWgs84([wgs84_Y,wgs84_X])
+		// let {X,Y}=Wgs84toShanghai([wgs84_Y,wgs84_X])
+		
+		// let {X,Y}=WGS84_bd(wgs84_X,wgs84_Y)
 
 		line.push(X)
 		line.push(Y)
